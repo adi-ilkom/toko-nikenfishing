@@ -22,55 +22,57 @@
             color: var(--teks-gelap);
             margin: 0;
             padding: 0;
-            padding-bottom: 90px; /* Ruang lebih untuk tombol WA */
+            padding-bottom: 90px;
         }
 
-        /* HEADER DENGAN BANNER SENDIRI */
+        /* --- UPDATE HEADER --- */
         header {
-            /* --- BAGIAN INI SUDAH DIGANTI JADI banner.jpg --- */
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner.jpg');
-            /* ----------------------------------------------- */
-            
-            background-size: cover; /* Agar gambar memenuhi lebar layar */
-            background-position: center; /* Fokus ke tengah gambar */
+            /* Gambar latar belakang ikan */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('banner.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px; /* Padding diperbesar sedikit */
             border-bottom: 5px solid var(--biru-laut);
         }
 
-        /* CSS untuk Logo & Tulisan Header */
+        /* CSS BARU UNTUK LOGO (LEBIH BESAR & BERCAHAYA) */
         .header-logo-img {
-            width: 80px;
+            width: 120px; /* Diperbesar dari 80px */
             height: auto;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            margin-bottom: 20px;
+            /* Efek cahaya: brightness dinaikkan + bayangan cyan terang */
+            filter: brightness(1.2) drop-shadow(0 0 15px rgba(0, 255, 255, 0.8));
         }
 
+        /* CSS BARU UNTUK GAMBAR TULISAN (LEBIH BESAR & BERCAHAYA) */
         .header-title-img {
-            width: 90%;
-            max-width: 350px;
+            width: 100%;
+            max-width: 550px; /* Batas maksimal diperbesar drastis dari 350px */
             height: auto;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8));
-            margin-bottom: 10px;
+            /* Efek cahaya: brightness + bayangan putih terang agar menonjol */
+            filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+            margin-bottom: 15px;
         }
 
+        /* CSS BARU UNTUK SLOGAN (LEBIH BESAR & JELAS) */
         p.slogan {
-            font-size: 1.1rem;
-            margin-top: 5px;
-            font-weight: 500;
-            color: #e0e0e0;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Tambah bayangan teks biar terbaca jelas di banner baru */
+            font-size: 1.5rem; /* Diperbesar dari 1.1rem */
+            margin-top: 10px;
+            font-weight: 700; /* Lebih tebal */
+            color: #ffffff; /* Putih bersih */
+            /* Bayangan teks lebih kuat agar terbaca jelas di background ramai */
+            text-shadow: 2px 2px 8px rgba(0,0,0,1);
         }
+        /* --------------------- */
 
-        /* CONTAINER */
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* JUDUL BAGIAN */
         h2.judul-bagian {
             border-left: 5px solid var(--biru-laut);
             padding-left: 15px;
@@ -86,7 +88,6 @@
             border-radius: 0 10px 10px 0;
         }
 
-        /* KATALOG ESSEN */
         .katalog-essen {
             display: grid;
             grid-template-columns: 1fr;
@@ -134,7 +135,6 @@
             border: 1px dashed #fbc02d;
         }
 
-        /* ULASAN GOOGLE */
         .google-header {
             display: flex;
             align-items: center;
@@ -188,12 +188,10 @@
         .reviewer-info .stars { color: var(--kuning-google); font-size: 0.75rem; margin-top: 2px; }
         .review-text { font-size: 0.85rem; color: #444; line-height: 1.5; font-style: italic; }
 
-        /* LIST ALAT */
         ul.list-alat { list-style: none; padding: 0; }
         ul.list-alat li { padding: 8px 0; border-bottom: 1px dashed #ccc; display: flex; align-items: center; }
         ul.list-alat i { color: var(--hijau-alam); margin-right: 10px; }
 
-        /* LOKASI */
         .box-lokasi {
             background-color: white;
             padding: 20px;
@@ -213,7 +211,6 @@
             font-size: 0.9rem;
         }
 
-        /* FOOTER TETAP (TOMBOL WA DIRECT) */
         .fixed-footer {
             position: fixed;
             bottom: 0;
