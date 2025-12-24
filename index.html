@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niken Fishing - Sahabat Pemancing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -25,30 +25,40 @@
             padding-bottom: 90px; /* Ruang lebih untuk tombol WA */
         }
 
-        /* HEADER */
+        /* HEADER BARU DENGAN GAMBAR */
         header {
+            /* Background gambar pemancing tetap dipakai biar keren */
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             border-bottom: 5px solid var(--biru-laut);
         }
 
-        h1 {
-            font-family: 'Anton', sans-serif;
-            font-size: 2.8rem;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px black;
+        /* CSS untuk Gambar Logo & Tulisan di Header */
+        .header-logo-img {
+            width: 80px; /* Ukuran logo, sesuaikan jika perlu */
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Bayangan halus */
+        }
+
+        .header-title-img {
+            width: 90%; /* Lebar responsif di HP */
+            max-width: 350px; /* Maksimal lebar di layar besar */
+            height: auto;
+            /* Memberi bayangan agar tulisan transparan terbaca jelas di background gelap */
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8)); 
+            margin-bottom: 10px;
         }
 
         p.slogan {
             font-size: 1.1rem;
-            margin-top: 10px;
+            margin-top: 5px;
             font-weight: 500;
+            color: #e0e0e0;
         }
 
         /* CONTAINER */
@@ -159,21 +169,21 @@
             margin-bottom: 10px;
         }
         
-        /* --- UPDATE TAMPILAN AVATAR FOTO --- */
+        /* TAMPILAN AVATAR FOTO BULAT */
         .avatar {
-            width: 40px; /* Ukuran diperbesar sedikit */
-            height: 40px;
+            width: 45px; /* Ukuran diperbesar sedikit */
+            height: 45px;
             border-radius: 50%; /* Bentuk Lingkaran */
             overflow: hidden; /* Memotong gambar yang keluar dari lingkaran */
             border: 2px solid #eee; /* Bingkai tipis */
             flex-shrink: 0;
+            background-color: #ddd; /* Warna cadangan jika foto loading */
         }
         .avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover; /* Gambar mengisi penuh lingkaran tanpa gepeng */
         }
-        /* ---------------------------------- */
 
         .reviewer-info .name { font-size: 0.9rem; font-weight: bold; color: #333; }
         .reviewer-info .stars { color: var(--kuning-google); font-size: 0.75rem; margin-top: 2px; }
@@ -241,8 +251,12 @@
 <body>
 
     <header>
-        <i class="fa-solid fa-fish" style="font-size: 45px; margin-bottom: 10px; color: #ffeb3b; text-shadow: 0 2px 5px rgba(0,0,0,0.5);"></i>
-        <h1>NIKEN FISHING</h1>
+        <img src="logonf.png" alt="Logo Niken Fishing" class="header-logo-img">
+        
+        <div>
+            <img src="tulisannikenfishing.png" alt="NIKEN FISHING" class="header-title-img">
+        </div>
+
         <p class="slogan">Pusat Essen Oplosan & Alat Pancing Tangerang</p>
     </header>
 
@@ -265,7 +279,7 @@
             <div class="card-review">
                 <div class="reviewer-info">
                     <div class="avatar">
-                        <img src="https://images.unsplash.com/photo-1576806021995-9f68eb39f10b?w=100&h=100&fit=crop" alt="Foto Profil Ikan">
+                        <img src="profil1.jpg" alt="Foto Profil Joni">
                     </div>
                     <div>
                         <div class="name">Joni Galatama</div>
@@ -278,7 +292,7 @@
             <div class="card-review">
                 <div class="reviewer-info">
                     <div class="avatar">
-                        <img src="https://images.unsplash.com/photo-1599061647948-9764e6b4323b?w=100&h=100&fit=crop" alt="Foto Profil Reel">
+                        <img src="profil2.jpg" alt="Foto Profil Asep">
                     </div>
                     <div>
                         <div class="name">Asep Mancing</div>
@@ -291,7 +305,7 @@
             <div class="card-review">
                 <div class="reviewer-info">
                     <div class="avatar">
-                        <img src="https://images.unsplash.com/photo-1534251633526-8f3ebc458698?w=100&h=100&fit=crop" alt="Foto Profil Umpan">
+                        <img src="profil3.jpg" alt="Foto Profil Rudi">
                     </div>
                     <div>
                         <div class="name">Rudi Hartono</div>
