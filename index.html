@@ -25,9 +25,8 @@
             padding-bottom: 90px; /* Ruang lebih untuk tombol WA */
         }
 
-        /* HEADER BARU DENGAN GAMBAR */
+        /* HEADER DENGAN GAMBAR */
         header {
-            /* Background gambar pemancing tetap dipakai biar keren */
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
             background-size: cover;
             background-position: center;
@@ -37,20 +36,19 @@
             border-bottom: 5px solid var(--biru-laut);
         }
 
-        /* CSS untuk Gambar Logo & Tulisan di Header */
+        /* CSS untuk Logo & Tulisan Header */
         .header-logo-img {
-            width: 80px; /* Ukuran logo, sesuaikan jika perlu */
+            width: 80px;
             height: auto;
             margin-bottom: 15px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Bayangan halus */
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .header-title-img {
-            width: 90%; /* Lebar responsif di HP */
-            max-width: 350px; /* Maksimal lebar di layar besar */
+            width: 90%;
+            max-width: 350px;
             height: auto;
-            /* Memberi bayangan agar tulisan transparan terbaca jelas di background gelap */
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8)); 
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8));
             margin-bottom: 10px;
         }
 
@@ -126,13 +124,13 @@
             font-weight: 500;
         }
         .tag-dll {
-            background-color: #fff9c4; /* Warna kuning muda */
+            background-color: #fff9c4;
             color: #f57f17;
             font-weight: bold;
             border: 1px dashed #fbc02d;
         }
 
-        /* CSS KHUSUS ULASAN (MODEL GOOGLE DENGAN FOTO REAL) */
+        /* ULASAN GOOGLE */
         .google-header {
             display: flex;
             align-items: center;
@@ -141,7 +139,7 @@
             background: white;
             padding: 15px;
             border-radius: 8px;
-            border-left: 5px solid #ea4335; /* Merah Google */
+            border-left: 5px solid #ea4335;
         }
         .review-scroll {
             display: flex;
@@ -168,23 +166,20 @@
             gap: 12px;
             margin-bottom: 10px;
         }
-        
-        /* TAMPILAN AVATAR FOTO BULAT */
         .avatar {
-            width: 45px; /* Ukuran diperbesar sedikit */
+            width: 45px;
             height: 45px;
-            border-radius: 50%; /* Bentuk Lingkaran */
-            overflow: hidden; /* Memotong gambar yang keluar dari lingkaran */
-            border: 2px solid #eee; /* Bingkai tipis */
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #eee;
             flex-shrink: 0;
-            background-color: #ddd; /* Warna cadangan jika foto loading */
+            background-color: #ddd;
         }
         .avatar img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Gambar mengisi penuh lingkaran tanpa gepeng */
+            object-fit: cover;
         }
-
         .reviewer-info .name { font-size: 0.9rem; font-weight: bold; color: #333; }
         .reviewer-info .stars { color: var(--kuning-google); font-size: 0.75rem; margin-top: 2px; }
         .review-text { font-size: 0.85rem; color: #444; line-height: 1.5; font-style: italic; }
@@ -194,7 +189,7 @@
         ul.list-alat li { padding: 8px 0; border-bottom: 1px dashed #ccc; display: flex; align-items: center; }
         ul.list-alat i { color: var(--hijau-alam); margin-right: 10px; }
 
-        /* LOKASI & BUTTONS */
+        /* LOKASI */
         .box-lokasi {
             background-color: white;
             padding: 20px;
@@ -214,7 +209,7 @@
             font-size: 0.9rem;
         }
 
-        /* FOOTER TETAP */
+        /* FOOTER TETAP (TOMBOL WA DIRECT) */
         .fixed-footer {
             position: fixed;
             bottom: 0;
@@ -252,18 +247,15 @@
 
     <header>
         <img src="logonf.png" alt="Logo Niken Fishing" class="header-logo-img">
-        
         <div>
             <img src="tulisannikenfishing.png" alt="NIKEN FISHING" class="header-title-img">
         </div>
-
         <p class="slogan">Pusat Essen Oplosan & Alat Pancing Tangerang</p>
     </header>
 
     <div class="container">
 
         <h2 class="judul-bagian">Apa Kata Pelanggan?</h2>
-        
         <div class="google-header">
             <div style="font-size: 2.5rem; font-weight: bold; color: #333;">4.9</div>
             <div>
@@ -278,96 +270,59 @@
         <div class="review-scroll">
             <div class="card-review">
                 <div class="reviewer-info">
-                    <div class="avatar">
-                        <img src="profil1.jpg" alt="Foto Profil Joni">
-                    </div>
-                    <div>
-                        <div class="name">Joni Galatama</div>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="avatar"><img src="profil1.jpg" alt="Joni"></div>
+                    <div><div class="name">Joni Galatama</div><div class="stars">★★★★★</div></div>
                 </div>
                 <p class="review-text">"Essen-nya luar biasa! Biangnya super bukan kaleng-kaleng. Baru tes langsung strike bertubi-tubi. Mantap!"</p>
             </div>
 
             <div class="card-review">
                 <div class="reviewer-info">
-                    <div class="avatar">
-                        <img src="profil2.jpg" alt="Foto Profil Asep">
-                    </div>
-                    <div>
-                        <div class="name">Asep Mancing</div>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="avatar"><img src="profil2.jpg" alt="Asep"></div>
+                    <div><div class="name">Asep Mancing</div><div class="stars">★★★★★</div></div>
                 </div>
                 <p class="review-text">"Bisa servis alat pancing juga di sini ternyata, reel saya kemarin rusak akhirnya sekarang normal kembali. Terimakasih Bang Niken."</p>
             </div>
 
             <div class="card-review">
                 <div class="reviewer-info">
-                    <div class="avatar">
-                        <img src="profil3.jpg" alt="Foto Profil Rudi">
-                    </div>
-                    <div>
-                        <div class="name">Rudi Hartono</div>
-                        <div class="stars">★★★★★</div>
-                    </div>
+                    <div class="avatar"><img src="profil3.jpg" alt="Rudi"></div>
+                    <div><div class="name">Rudi Hartono</div><div class="stars">★★★★★</div></div>
                 </div>
                 <p class="review-text">"Harga murah dan Bang Niken orangnya ramah enak diajak ngobrol konsultasi racikan. Recommended seller!"</p>
             </div>
         </div>
 
-
         <h2 class="judul-bagian">Stok Essen Juara</h2>
         <div class="katalog-essen">
-            
             <div class="kotak-produk">
                 <div class="nama-kategori"><i class="fa-solid fa-drumstick-bite" style="color: #d32f2f;"></i> Amisan</div>
                 <div class="list-aroma">
-                    <span class="tag">Beef (Sapi)</span>
-                    <span class="tag">Tenggiri</span>
-                    <span class="tag">Seafood</span>
-                    <span class="tag">Choya</span>
-                    <span class="tag">Hiu</span>
-                    <span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
+                    <span class="tag">Beef (Sapi)</span><span class="tag">Tenggiri</span><span class="tag">Seafood</span>
+                    <span class="tag">Choya</span><span class="tag">Hiu</span><span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
                 </div>
             </div>
-
             <div class="kotak-produk">
                 <div class="nama-kategori"><i class="fa-solid fa-lemon" style="color: #fbc02d;"></i> Buah-buahan</div>
                 <div class="list-aroma">
-                    <span class="tag">Kweni</span>
-                    <span class="tag">Durian</span>
-                    <span class="tag">Melon</span>
-                    <span class="tag">Nangka</span>
-                    <span class="tag">Anggur</span>
-                    <span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
+                    <span class="tag">Kweni</span><span class="tag">Durian</span><span class="tag">Melon</span>
+                    <span class="tag">Nangka</span><span class="tag">Anggur</span><span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
                 </div>
             </div>
-
             <div class="kotak-produk">
                 <div class="nama-kategori"><i class="fa-solid fa-cookie" style="color: #795548;"></i> Gurihan</div>
                 <div class="list-aroma">
-                    <span class="tag">Coconut</span>
-                    <span class="tag">Bolu SP</span>
-                    <span class="tag">Wingko Babat</span>
-                    <span class="tag">Jagung Bakar</span>
-                    <span class="tag">Susu</span>
-                    <span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
+                    <span class="tag">Coconut</span><span class="tag">Bolu SP</span><span class="tag">Wingko Babat</span>
+                    <span class="tag">Jagung Bakar</span><span class="tag">Susu</span><span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
                 </div>
             </div>
-
             <div class="kotak-produk">
                 <div class="nama-kategori"><i class="fa-solid fa-leaf" style="color: #388e3c;"></i> Minyak Atsiri</div>
                 <div class="list-aroma">
-                    <span class="tag">Sereh</span>
-                    <span class="tag">Melati Keraton</span>
-                    <span class="tag">Geranium</span>
-                    <span class="tag">Nilam</span>
-                    <span class="tag">Usar</span>
-                    <span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
+                    <span class="tag">Sereh</span><span class="tag">Melati Keraton</span><span class="tag">Geranium</span>
+                    <span class="tag">Nilam</span><span class="tag">Usar</span><span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
                 </div>
             </div>
-
         </div>
 
         <h2 class="judul-bagian">Perlengkapan & Servis</h2>
@@ -394,25 +349,16 @@
             </a>
         </div>
 
-        <footer>
-            © 2025 Niken Fishing. Salam Strike! 🎣
-        </footer>
-
+        <footer>© 2025 Niken Fishing. Salam Strike! 🎣</footer>
     </div>
 
     <div class="fixed-footer">
-        <a href="#" onclick="chatWA()" class="btn-wa-besar">
+        <a href="https://wa.me/6285600000054?text=Halo%20Bang%20Niken!%20%F0%9F%91%8B%0ASaya%20lihat%20website,%20mau%20tanya%20stok%20Essen%20/%20Servis%20Reel..." 
+           class="btn-wa-besar" 
+           target="_blank">
             <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Chat / Tanya Stok
         </a>
     </div>
-
-    <script>
-        function chatWA() {
-            const no = "6285600000054";
-            const msg = "Halo Bang Niken! 👋\nSaya lihat website, mau tanya stok Essen / Servis Reel...";
-            window.open("https://wa.me/" + no + "?text=" + encodeURIComponent(msg), '_blank');
-        }
-    </script>
 
 </body>
 </html>
