@@ -127,6 +127,53 @@
             border-radius: 4px;
         }
 
+        /* BOX OPLOSAN CUSTOM (BARU) */
+        .custom-oplos-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Biru muda segar */
+            border: 2px dashed #0288d1; /* Garis putus-putus */
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .oplos-icon {
+            font-size: 2.5rem;
+            color: #0288d1;
+            background: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .oplos-content h3 {
+            margin: 0 0 8px 0;
+            color: #01579b;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+        .oplos-content p {
+            margin: 0;
+            color: #333;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+        /* Mobile adjustment for Oplos Box */
+        @media (max-width: 600px) {
+            .custom-oplos-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
         /* GRID SYSTEM KATALOG */
         .katalog-essen {
             display: grid;
@@ -143,7 +190,7 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%; /* Agar tinggi kartu sama */
+            height: 100%;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -188,7 +235,7 @@
             color: #f57f17;
             font-weight: bold;
             border: 1px dashed #fbc02d;
-            cursor: pointer; /* Ubah kursor jadi tangan */
+            cursor: pointer;
             transition: 0.2s;
             display: inline-block;
             margin-top: 5px;
@@ -198,9 +245,9 @@
             color: white;
         }
 
-        /* Hidden List (Sembunyi by default) */
+        /* Hidden List */
         .list-hidden {
-            display: none; /* Rahasia utamanya disini */
+            display: none;
             flex-wrap: wrap;
             gap: 8px;
             margin-top: 8px;
@@ -501,6 +548,20 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="custom-oplos-box">
+            <div class="oplos-icon">
+                <i class="fa-solid fa-flask"></i>
+            </div>
+            <div class="oplos-content">
+                <h3>BISA REQUEST OPLOSAN!</h3>
+                <p>Mau beli <strong>Biangan Murni (Satuan)</strong>? Silakan.<br>
+                Mau terima beres <strong>Dioploskan Sekalian</strong>? Tentu Bisa!</p>
+                <p style="font-size: 0.9rem; margin-top: 5px; color: #555;">
+                    <em>*Racikan bisa disesuaikan dengan jenis ikan & kondisi air kolam Anda. Konsultasikan gratis!</em>
+                </p>
+            </div>
         </div>
 
         <h2 class="judul-bagian">Perlengkapan & Servis</h2>
