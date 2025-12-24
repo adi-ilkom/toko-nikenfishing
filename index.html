@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niken Fishing - Sahabat Pemancing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -43,19 +43,19 @@
             height: auto;
             margin-bottom: 20px;
             filter: brightness(1.2) drop-shadow(0 0 15px rgba(0, 255, 255, 0.8));
-            transition: transform 0.3s; /* Efek zoom dikit pas di hover */
+            transition: transform 0.3s;
         }
         .header-logo-img:hover { transform: scale(1.05); }
 
         .header-title-img {
             width: 90%;
-            max-width: 600px; /* Diperlebar buat PC */
+            max-width: 600px;
             height: auto;
             filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
             margin-bottom: 20px;
         }
 
-        /* VIDEOTRON / RUNNING TEXT */
+        /* VIDEOTRON */
         .videotron-container {
             width: 100%;
             background: rgba(0, 0, 0, 0.7);
@@ -74,7 +74,7 @@
             color: #ffeb3b;
             text-shadow: 2px 2px 4px #000;
             padding-left: 100%;
-            animation: jalan-kiri 15s linear infinite; /* Sedikit diperlambat biar enak dibaca di layar lebar */
+            animation: jalan-kiri 15s linear infinite;
         }
 
         @keyframes jalan-kiri {
@@ -82,9 +82,8 @@
             100% { transform: translate(-100%, 0); margin-left: -20px;} 
         }
 
-        /* --- CONTAINER UTAMA (KUNCI RESPONSIF) --- */
+        /* CONTAINER */
         .container {
-            /* Ubah dari 800px jadi 1200px biar lebar di PC */
             max-width: 1200px; 
             margin: 0 auto;
             padding: 20px;
@@ -103,25 +102,40 @@
             padding-bottom: 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             border-radius: 0 10px 10px 0;
-            font-size: 1.5rem; /* Judul lebih besar */
+            font-size: 1.5rem;
         }
 
-        /* --- GRID SYSTEM PINTAR (RESPONSIF) --- */
+        /* STORY BOX (CERITA KAMI & INFO ESSEN) */
+        .story-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .story-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+        }
+        .story-highlight {
+            font-weight: bold;
+            color: var(--biru-laut);
+            background: #e1f5fe;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        /* ------------------------------------- */
+
+        /* GRID SYSTEM */
         .katalog-essen {
             display: grid;
-            grid-template-columns: 1fr; /* HP: 1 Kolom */
+            grid-template-columns: 1fr;
             gap: 20px;
         }
-        
-        /* Tablet (Lebar min 600px): Jadi 2 Kolom */
-        @media (min-width: 600px) { 
-            .katalog-essen { grid-template-columns: 1fr 1fr; } 
-        }
-        
-        /* Laptop/PC (Lebar min 1024px): Jadi 4 Kolom! */
-        @media (min-width: 1024px) { 
-            .katalog-essen { grid-template-columns: repeat(4, 1fr); } 
-        }
+        @media (min-width: 600px) { .katalog-essen { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1024px) { .katalog-essen { grid-template-columns: repeat(4, 1fr); } }
 
         .kotak-produk {
             background: white;
@@ -130,10 +144,9 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%; /* Biar tinggi kartunya sama rata */
+            height: 100%;
             box-sizing: border-box;
         }
-        /* Efek Hover di PC */
         .kotak-produk:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -184,8 +197,6 @@
             border-left: 6px solid #ea4335;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        
-        /* Scroll Review Responsif */
         .review-scroll {
             display: flex;
             gap: 20px;
@@ -194,22 +205,17 @@
             scrollbar-width: none;
         }
         .review-scroll::-webkit-scrollbar { display: none; }
-
-        /* Trik Khusus PC: Review jadi Grid 3 Kolom, bukan scroll */
         @media (min-width: 1024px) {
             .review-scroll {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 overflow-x: visible;
             }
-            .card-review {
-                min-width: auto; /* Hapus batasan lebar di PC */
-                max-width: 100%;
-            }
+            .card-review { max-width: 100%; min-width: auto; }
         }
 
         .card-review {
-            min-width: 280px; /* HP tetap scroll */
+            min-width: 280px;
             max-width: 280px;
             background: white;
             border: 1px solid #eee;
@@ -218,8 +224,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             flex-shrink: 0;
         }
-        /* Hapus max-width di PC (ditimpa media query di atas) */
-        @media (min-width: 1024px) { .card-review { max-width: none; min-width: auto; } }
 
         .reviewer-info {
             display: flex;
@@ -236,16 +240,11 @@
             flex-shrink: 0;
             background-color: #ddd;
         }
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; }
         .reviewer-info .name { font-size: 1rem; font-weight: bold; color: #333; }
         .reviewer-info .stars { color: var(--kuning-google); font-size: 0.8rem; margin-top: 4px; }
         .review-text { font-size: 0.95rem; color: #555; line-height: 1.6; font-style: italic; }
 
-        /* LIST ALAT */
         ul.list-alat { list-style: none; padding: 0; }
         ul.list-alat li { padding: 12px 0; border-bottom: 1px dashed #ccc; display: flex; align-items: center; font-size: 1.05rem;}
         ul.list-alat i { color: var(--hijau-alam); margin-right: 15px; font-size: 1.2rem;}
@@ -288,7 +287,7 @@
             background-color: #25d366;
             color: white;
             width: 95%;
-            max-width: 600px; /* Batas lebar tombol di PC */
+            max-width: 600px;
             padding: 15px;
             text-align: center;
             border-radius: 50px;
@@ -323,6 +322,18 @@
     </header>
 
     <div class="container">
+
+        <h2 class="judul-bagian">Cerita Kami</h2>
+        <div class="story-box" style="border-top: 4px solid #ff9800;">
+            <p class="story-text">
+                <i class="fa-solid fa-quote-left" style="font-size: 2rem; color: #ff9800; float: left; margin-right: 10px;"></i>
+                Berawal dari tahun 2018, Niken Fishing lahir dari sebuah kegelisahan yang mungkin kawan-kawan juga rasakan: <strong>Ribetnya persiapan mancing</strong>. Dulu, saya sering kewalahan harus keliling ke banyak tempat; beli umpan di toko A, cari alat pancing di toko B, giliran Reel rusak bingung mau servis di mana.
+                <br><br>
+                Karena itulah <span class="story-highlight">Niken Fishing</span> hadir. Kami ingin menjadi solusi <strong>"Satu Atap"</strong> untuk mempermudah hobi kalian. Mulai dari Essen oplosan racikan jahat, alat tempur berkualitas, aksesoris, hingga bengkel servis Reel... semua ada di sini.
+                <br><br>
+                Biar kawan-kawan cukup fokus mikirin <strong>"Strike"</strong>, urusan amunisi biar kami yang siapkan!
+            </p>
+        </div>
 
         <h2 class="judul-bagian">Apa Kata Pelanggan?</h2>
         <div class="google-header">
@@ -363,6 +374,17 @@
         </div>
 
         <h2 class="judul-bagian">Stok Essen Juara</h2>
+        
+        <div class="story-box" style="border-top: 4px solid #d32f2f;">
+            <p class="story-text">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #d32f2f; margin-right: 5px;"></i> 
+                <strong>JUJUR SOAL KUALITAS:</strong><br>
+                Essen yang kami jual adalah <strong>Biang Murni 100% Kualitas Super</strong>, bukan barang "abal-abal" campuran yang aromanya hilang saat kena air atau dicampur umpan.
+                <br><br>
+                <span style="color: #d32f2f; font-weight: bold;">Boleh Diadu!</span> Kami memikirkan kualitas jangka panjang, bukan hanya keuntungan sesaat. Prinsip kami: <em>"Untung tipis nggak masalah, yang penting kualitas terbaik dan harga tetap standar pasar."</em>
+            </p>
+        </div>
+
         <div class="katalog-essen">
             <div class="kotak-produk">
                 <div class="nama-kategori"><i class="fa-solid fa-drumstick-bite" style="color: #d32f2f;"></i> Amisan</div>
