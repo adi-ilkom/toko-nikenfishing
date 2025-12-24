@@ -25,47 +25,64 @@
             padding-bottom: 90px;
         }
 
-        /* --- UPDATE HEADER --- */
+        /* --- HEADER --- */
         header {
-            /* Gambar latar belakang ikan */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('banner.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('banner.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 60px 20px; /* Padding diperbesar sedikit */
+            padding-top: 50px; 
+            padding-bottom: 0; /* Padding bawah 0 biar running text nempel bawah */
             border-bottom: 5px solid var(--biru-laut);
+            overflow: hidden; /* Supaya teks ga bocor keluar */
         }
 
-        /* CSS BARU UNTUK LOGO (LEBIH BESAR & BERCAHAYA) */
         .header-logo-img {
-            width: 120px; /* Diperbesar dari 80px */
+            width: 120px;
             height: auto;
             margin-bottom: 20px;
-            /* Efek cahaya: brightness dinaikkan + bayangan cyan terang */
             filter: brightness(1.2) drop-shadow(0 0 15px rgba(0, 255, 255, 0.8));
         }
 
-        /* CSS BARU UNTUK GAMBAR TULISAN (LEBIH BESAR & BERCAHAYA) */
         .header-title-img {
             width: 100%;
-            max-width: 550px; /* Batas maksimal diperbesar drastis dari 350px */
+            max-width: 550px;
             height: auto;
-            /* Efek cahaya: brightness + bayangan putih terang agar menonjol */
             filter: brightness(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        /* CSS BARU UNTUK SLOGAN (LEBIH BESAR & JELAS) */
-        p.slogan {
-            font-size: 1.5rem; /* Diperbesar dari 1.1rem */
-            margin-top: 10px;
-            font-weight: 700; /* Lebih tebal */
-            color: #ffffff; /* Putih bersih */
-            /* Bayangan teks lebih kuat agar terbaca jelas di background ramai */
-            text-shadow: 2px 2px 8px rgba(0,0,0,1);
+        /* --- CSS VIDEOTRON (RUNNING TEXT) --- */
+        .videotron-container {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Latar hitam transparan */
+            padding: 15px 0;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            white-space: nowrap; /* Teks memanjang ke samping */
+            overflow: hidden;
+            box-sizing: border-box;
         }
-        /* --------------------- */
+
+        .slogan-jalan {
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffeb3b; /* Warna Kuning Neon biar nyala */
+            text-shadow: 2px 2px 4px #000;
+            padding-left: 100%; /* Mulai dari luar layar kanan */
+            animation: jalan-kiri 12s linear infinite; /* Animasi 12 detik */
+        }
+
+        /* Rumus Animasi Jalan */
+        @keyframes jalan-kiri {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); margin-left: -20px;} 
+            /* Trik biar teksnya lewat sampai hilang ke kiri */
+        }
+        /* ------------------------------------ */
+
 
         .container {
             max-width: 800px;
@@ -251,8 +268,13 @@
         <div>
             <img src="tulisannikenfishing.png" alt="NIKEN FISHING" class="header-title-img">
         </div>
-        <p class="slogan">Pusat Essen Oplosan & Alat Pancing Tangerang</p>
-    </header>
+        
+        <div class="videotron-container">
+            <div class="slogan-jalan">
+                🎣 PUSAT ESSEN OPLOSAN & ALAT PANCING TANGERANG • TERLENGKAP & TERMURAH • SIAP KIRIM SELURUH INDONESIA 🎣
+            </div>
+        </div>
+        </header>
 
     <div class="container">
 
