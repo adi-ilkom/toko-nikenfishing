@@ -105,7 +105,7 @@
             font-size: 1.5rem;
         }
 
-        /* STORY BOX (CERITA KAMI & INFO ESSEN) */
+        /* STORY BOX */
         .story-box {
             background: white;
             padding: 30px;
@@ -126,9 +126,8 @@
             padding: 2px 5px;
             border-radius: 4px;
         }
-        /* ------------------------------------- */
 
-        /* GRID SYSTEM */
+        /* GRID SYSTEM KATALOG */
         .katalog-essen {
             display: grid;
             grid-template-columns: 1fr;
@@ -144,8 +143,10 @@
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
+            height: 100%; /* Agar tinggi kartu sama */
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
         .kotak-produk:hover {
             transform: translateY(-5px);
@@ -165,10 +166,12 @@
             gap: 10px;
         }
 
+        /* LIST TAG */
         .list-aroma {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
+            margin-bottom: 10px;
         }
         .tag {
             background-color: #e1f5fe;
@@ -178,11 +181,36 @@
             font-size: 0.9rem;
             font-weight: 500;
         }
+        
+        /* TOMBOL EXPAND (DLL) */
         .tag-dll {
             background-color: #fff9c4;
             color: #f57f17;
             font-weight: bold;
             border: 1px dashed #fbc02d;
+            cursor: pointer; /* Ubah kursor jadi tangan */
+            transition: 0.2s;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .tag-dll:hover {
+            background-color: #fbc02d;
+            color: white;
+        }
+
+        /* Hidden List (Sembunyi by default) */
+        .list-hidden {
+            display: none; /* Rahasia utamanya disini */
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #eee;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* ULASAN GOOGLE */
@@ -355,7 +383,6 @@
                 </div>
                 <p class="review-text">"Essen-nya luar biasa! Biangnya super bukan kaleng-kaleng. Baru tes langsung strike bertubi-tubi. Mantap!"</p>
             </div>
-
             <div class="card-review">
                 <div class="reviewer-info">
                     <div class="avatar"><img src="profil2.jpg" alt="Asep"></div>
@@ -363,7 +390,6 @@
                 </div>
                 <p class="review-text">"Bisa servis alat pancing juga di sini ternyata, reel saya kemarin rusak akhirnya sekarang normal kembali. Terimakasih Bang Niken."</p>
             </div>
-
             <div class="card-review">
                 <div class="reviewer-info">
                     <div class="avatar"><img src="profil3.jpg" alt="Rudi"></div>
@@ -386,34 +412,95 @@
         </div>
 
         <div class="katalog-essen">
+            
             <div class="kotak-produk">
-                <div class="nama-kategori"><i class="fa-solid fa-drumstick-bite" style="color: #d32f2f;"></i> Amisan</div>
+                <div class="nama-kategori"><i class="fa-solid fa-lemon" style="color: #fbc02d;"></i> Essen Buah</div>
+                
                 <div class="list-aroma">
-                    <span class="tag">Beef (Sapi)</span><span class="tag">Tenggiri</span><span class="tag">Seafood</span>
-                    <span class="tag">Choya</span><span class="tag">Hiu</span><span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
+                    <span class="tag">Strawberry</span><span class="tag">Nangka</span>
+                    <span class="tag">Pisang</span><span class="tag">Melon</span>
+                    <span class="tag">Durian</span><span class="tag">Mangga</span>
+                </div>
+
+                <div id="list-buah" class="list-hidden">
+                    <span class="tag">Kweni</span><span class="tag">Nanas</span>
+                    <span class="tag">Apel</span><span class="tag">Anggur</span>
+                    <span class="tag">Jeruk</span><span class="tag">Sirsak</span>
+                    <span class="tag">Pepaya</span><span class="tag">Timun Mas</span>
+                    <span class="tag">Semangka</span><span class="tag">Blueberry</span>
+                    <span class="tag">Blackcurrant</span><span class="tag">Raspberry</span>
+                    <span class="tag">Jagung</span><span class="tag">Tutti Frutti</span>
+                    <span class="tag">Pandan</span><span class="tag">Kelapa</span>
+                    <span class="tag">Markisa</span>
+                </div>
+                
+                <div id="btn-buah" class="tag tag-dll" onclick="toggleList('list-buah', 'btn-buah')">
+                    + Dan Banyak Lagi (DLL)
                 </div>
             </div>
+
             <div class="kotak-produk">
-                <div class="nama-kategori"><i class="fa-solid fa-lemon" style="color: #fbc02d;"></i> Buah-buahan</div>
+                <div class="nama-kategori"><i class="fa-solid fa-drumstick-bite" style="color: #d32f2f;"></i> Essen Amisan</div>
+                
                 <div class="list-aroma">
-                    <span class="tag">Kweni</span><span class="tag">Durian</span><span class="tag">Melon</span>
-                    <span class="tag">Nangka</span><span class="tag">Anggur</span><span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
+                    <span class="tag">Beef</span><span class="tag">Tenggiri</span>
+                    <span class="tag">Seafood</span><span class="tag">Choya</span>
+                    <span class="tag">Hiu</span><span class="tag">Ayam</span>
+                </div>
+
+                <div id="list-amisan" class="list-hidden">
+                    <span class="tag">Kepiting</span><span class="tag">Udang</span>
+                    <span class="tag">Udang Bakar</span><span class="tag">Ebi</span>
+                    <span class="tag">Minyak Biawak</span><span class="tag">Salmon</span>
+                    <span class="tag">Salmon Merah</span>
+                </div>
+
+                <div id="btn-amisan" class="tag tag-dll" onclick="toggleList('list-amisan', 'btn-amisan')">
+                    + Dan Banyak Lagi (DLL)
                 </div>
             </div>
+
             <div class="kotak-produk">
-                <div class="nama-kategori"><i class="fa-solid fa-cookie" style="color: #795548;"></i> Gurihan</div>
+                <div class="nama-kategori"><i class="fa-solid fa-cookie" style="color: #795548;"></i> Essen Gurihan</div>
+                
                 <div class="list-aroma">
-                    <span class="tag">Coconut</span><span class="tag">Bolu SP</span><span class="tag">Wingko Babat</span>
-                    <span class="tag">Jagung Bakar</span><span class="tag">Susu</span><span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
+                    <span class="tag">Susu Bening</span><span class="tag">Susu Kental</span>
+                    <span class="tag">Jagung Bakar</span><span class="tag">Kelapa Bakar</span>
+                    <span class="tag">Bolu SP</span><span class="tag">Wingko</span>
+                </div>
+
+                <div id="list-gurihan" class="list-hidden">
+                    <span class="tag">Sari Lapis</span><span class="tag">Keju</span>
+                    <span class="tag">Bolu Bening</span><span class="tag">Vanila</span>
+                    <span class="tag">Vanili</span><span class="tag">Butter Cookies</span>
+                    <span class="tag">Wisman</span>
+                </div>
+
+                <div id="btn-gurihan" class="tag tag-dll" onclick="toggleList('list-gurihan', 'btn-gurihan')">
+                    + Dan Banyak Lagi (DLL)
                 </div>
             </div>
+
             <div class="kotak-produk">
-                <div class="nama-kategori"><i class="fa-solid fa-leaf" style="color: #388e3c;"></i> Minyak Atsiri</div>
+                <div class="nama-kategori"><i class="fa-solid fa-leaf" style="color: #388e3c;"></i> Essen Atsiri</div>
+                
                 <div class="list-aroma">
-                    <span class="tag">Sereh</span><span class="tag">Melati Keraton</span><span class="tag">Geranium</span>
-                    <span class="tag">Nilam</span><span class="tag">Usar</span><span class="tag tag-dll">+ Dan Banyak Lagi (DLL)</span>
+                    <span class="tag">Melati Jasmin</span><span class="tag">Melati Keraton</span>
+                    <span class="tag">Geranium</span><span class="tag">Sereh</span>
+                    <span class="tag">Garlik</span><span class="tag">Nilam</span>
+                </div>
+
+                <div id="list-atsiri" class="list-hidden">
+                    <span class="tag">Usar</span><span class="tag">Akasia</span>
+                    <span class="tag">Jahe</span><span class="tag">Gingseng</span>
+                    <span class="tag">Walang Sangit</span>
+                </div>
+
+                <div id="btn-atsiri" class="tag tag-dll" onclick="toggleList('list-atsiri', 'btn-atsiri')">
+                    + Dan Banyak Lagi (DLL)
                 </div>
             </div>
+
         </div>
 
         <h2 class="judul-bagian">Perlengkapan & Servis</h2>
@@ -450,6 +537,21 @@
             <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> Chat / Tanya Stok
         </a>
     </div>
+
+    <script>
+        function toggleList(idList, idBtn) {
+            var list = document.getElementById(idList);
+            var btn = document.getElementById(idBtn);
+
+            if (list.style.display === "flex") {
+                list.style.display = "none";
+                btn.innerHTML = "+ Dan Banyak Lagi (DLL)";
+            } else {
+                list.style.display = "flex";
+                btn.innerHTML = "- Sembunyikan";
+            }
+        }
+    </script>
 
 </body>
 </html>
